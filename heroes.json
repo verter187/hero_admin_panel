@@ -7,17 +7,49 @@
       "element": "fire"
     },
     {
+      "id": 2,
+      "name": "Неизвестный герой",
+      "description": "Скрывающийся в тени",
+      "element": "wind"
+    },
+    {
       "id": 3,
       "name": "Морской герой",
       "description": "Как аквамен, но не из DC",
       "element": "water"
+    },
+    {
+      "id": "53a275c5-4ca4-4bad-965d-22b435361eb0",
+      "name": "Конан Варвар",
+      "description": "Суровый воин",
+      "element": "fire"
     }
   ],
   "filters": [
-    "all",
-    "fire",
-    "water",
-    "wind",
-    "earth"
+    {
+      "name": "all",
+      "label": "Все",
+      "className": "btn-outline-dark"
+    },
+    {
+      "name": "fire",
+      "label": "Огонь",
+      "className": "btn-danger"
+    },
+    {
+      "name": "water",
+      "label": "Вода",
+      "className": "btn-primary"
+    },
+    {
+      "name": "wind",
+      "label": "Ветер",
+      "className": "btn-success"
+    },
+    {
+      "name": "earth",
+      "label": "Земля",
+      "className": "btn-secondary"
+    }
   ]
 }
