@@ -1,27 +1,21 @@
 {
   "heroes": [
     {
-      "id": 1,
-      "name": "Первый герой",
-      "description": "Первый герой в рейтинге!",
+      "id": "3ba29993-c089-4e16-ad78-2882916c2a68",
+      "name": "Конан Варвар",
+      "description": "dsfsfdfdsdfs",
       "element": "fire"
     },
     {
-      "id": 2,
-      "name": "Неизвестный герой",
-      "description": "Скрывающийся в тени",
+      "id": "533f9d00-e282-4e80-8e20-f3a86200a472",
+      "name": "Гендальф Серый",
+      "description": "аывавыавываавываавываы",
       "element": "wind"
     },
     {
-      "id": 3,
-      "name": "Морской герой",
-      "description": "Как аквамен, но не из DC",
-      "element": "water"
-    },
-    {
-      "id": "42f6b379-878f-4a13-9fb6-537bef405f55",
-      "name": "Конан Варвар",
-      "description": "sdffdsdfsfdsfds",
+      "id": "b16056ac-3c0c-42a7-8a0f-16f0120bad4c",
+      "name": "Рыжая соня",
+      "description": "ыавдоладоаыв",
       "element": "fire"
     }
   ],
