@@ -6,7 +6,7 @@ import store from "../../store";
 
 import { filtersChanged, fetchFilters, selectAll } from "./filtersSlice.js";
 import Spinner from "../spinner/Spinner";
-
+// test
 const HeroesFilters = () => {
   const { filtersLoadingStatus, activeFilter } = useSelector(
     (state) => state.filters
