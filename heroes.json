@@ -1,46 +1,51 @@
 {
   "heroes": [
     {
-      "id": "3ba29993-c089-4e16-ad78-2882916c2a68",
-      "name": "Конан Варвар",
-      "description": "dsfsfdfdsdfs",
+      "id": 1,
+      "name": "Первый герой",
+      "description": "Первый герой в рейтинге!",
       "element": "fire"
     },
     {
-      "id": "533f9d00-e282-4e80-8e20-f3a86200a472",
-      "name": "Гендальф Серый",
-      "description": "аывавыавываавываавываы",
+      "id": 2,
+      "name": "Неизвестный герой",
+      "description": "Скрывающийся в тени",
       "element": "wind"
     },
     {
-      "id": "b16056ac-3c0c-42a7-8a0f-16f0120bad4c",
-      "name": "Рыжая соня",
-      "description": "ыавдоладоаыв",
-      "element": "fire"
+      "id": 3,
+      "name": "Морской герой",
+      "description": "Как аквамен, но не из DC",
+      "element": "water"
     }
   ],
   "filters": [
     {
+      "id": "all",
       "name": "all",
       "label": "Все",
       "className": "btn-outline-dark"
     },
     {
+      "id": "fire",
       "name": "fire",
       "label": "Огонь",
       "className": "btn-danger"
     },
     {
+      "id": "water",
       "name": "water",
       "label": "Вода",
       "className": "btn-primary"
     },
     {
+      "id": "wind",
       "name": "wind",
       "label": "Ветер",
       "className": "btn-success"
     },
     {
+      "id": "earth",
       "name": "earth",
       "label": "Земля",
       "className": "btn-secondary"

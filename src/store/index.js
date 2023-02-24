@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import heroes from "../components/heroesList/heroesSlice";
-import filters from "../components/heroesFilters/filterSlice";
+import filters from "../components/heroesFilters/filtersSlice";
 
-const stringMiddleware = (store) => (next) => (action) => {
+const stringMiddleware = () => (next) => (action) => {
   if (typeof action === "string") {
-    return next({ type: action });
+    return next({
+      type: action,
+    });
   }
   return next(action);
 };
@@ -16,26 +18,4 @@ const store = configureStore({
   devTools: process.env.NODE_ENV !== "production",
 });
 
-// const enhacner =
-//   (createStore) =>
-//   (...args) => {
-//     const store = createStore(...args);
-//     const oldDispatch = store.dispatch;
-//     store.dispatch = (action) => {
-//       if (typeof action === "string") {
-//         return oldDispatch({ type: action });
-//       }
-//       return oldDispatch(action);
-//     };
-//     return store;
-//   };
-// const store = createStore(
-//   combineReducers({ heroes, filters }),
-//   compose(
-//     applyMiddleware(ReduxThunk, stringMiddleware),
-//     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-//   )
-// );
-
 export default store;
-//
