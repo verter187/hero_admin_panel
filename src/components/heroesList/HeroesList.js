@@ -3,27 +3,29 @@ import { useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
-import {
-  heroDeleted,
-  fetchHeroes,
-  filteredHeroesSelector,
-} from "../heroesList/heroesSlice";
+import { heroDeleted, fetchHeroes } from "./heroesSlice";
+
+import { useGetHeroesQuery } from "../../api/apiSlice";
 
 import HeroesListItem from "../heroesListItem/HeroesListItem";
 import Spinner from "../spinner/Spinner";
 
 import "./heroesList.scss";
-
-// Задача для этого компонента:
-// При клике на "крестик" идет удаление персонажа из общего состояния
-// Усложненная задача:
-// Удаление идет и с json файла при помощи метода DELETE
+import { useMemo } from "react";
 
 const HeroesList = () => {
-  const filteredHeroes = useSelector(filteredHeroesSelector);
-  const heroesLoadingStatus = useSelector(
-    (state) => state.heroes.heroesLoadingStatus
-  );
+  const { data: heroes = [], isLoading, isError } = useGetHeroesQuery();
+
+  const activeFilter = useSelector((state) => state.filters.activeFilter);
+  const filteredHeroes = useMemo(() => {
+    const filteredHeroes = heroes.slice();
+    if (activeFilter === "all") {
+      return filteredHeroes;
+    } else {
+      return filteredHeroes.filter((item) => item.element === activeFilter);
+    } // eslint-disable-next-line
+  }, [heroes, activeFilter]);
+
   const dispatch = useDispatch();
   const { request } = useHttp();
 
@@ -35,9 +37,6 @@ const HeroesList = () => {
     []
   );
 
-  // Функция берет id и по нему удаляет ненужного персонажа из store
-  // ТОЛЬКО если запрос на удаление прошел успешно
-  // Отслеживайте цепочку действий actions => reducers
   const onDelete = useCallback(
     (id) => {
       // Удаление персонажа по его id
@@ -49,9 +48,9 @@ const HeroesList = () => {
     [request]
   );
 
-  if (heroesLoadingStatus === "loading") {
+  if (isLoading) {
     return <Spinner />;
-  } else if (heroesLoadingStatus === "error") {
+  } else if (isError) {
     return <h5 className="text-center mt-5">Ошибка загрузки</h5>;
   }
 
